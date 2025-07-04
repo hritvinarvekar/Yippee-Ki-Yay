@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<string.h>
+ 
+int main()
+{
+    char in[100];
+    int count[100];
+    int c=0,z,i,j;
+    getchar();
+    fgets(in,sizeof(in),stdin);
+    for(i=0;i<strlen(in);i++){
+        z=0;
+        for( j=0;j<strlen(in);j++){
+            if(in[i]==in[j]){
+                z++;
+                count[c]=z;
+            }
+        }
+        c++;
+    }
+    
+    for(i=0;i<c;i++){
+        for(j=0;j<c-1;j++){
+            int temp;
+            if(count[j]<count[j+1]){
+                temp=count[j];
+                count[j]=count[j+1];
+                count[j+1]=temp;
+            }
+        }
+    }
+    
+    printf("%d",count[0]);
+}

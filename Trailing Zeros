@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long x,fact;
+    int c=0;
+    cin>>x;
+    for(long long i=1;i<=x;i++){
+        fact=fact*i;
+    }
+    for(long long j = 10 ; j<=fact; j=j*10){
+        if(fact%j==0){
+            c++;
+        }
+    }
+    cout<<c;
+}
